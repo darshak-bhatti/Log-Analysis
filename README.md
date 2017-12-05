@@ -6,3 +6,9 @@ Kinesis Firehose <br />
 ElasticSearch <br />
 Kibana <br />
 Spark <br />
+
+![Alt text](ArchitectureDiagram.png?raw=true "Architecture")
+
+<br />
+
+![Alt text](KibanaDashboard.png?raw=true "Kibana Dashboard")
