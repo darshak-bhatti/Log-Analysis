@@ -1,0 +1,24 @@
+{
+    "cloudwatch.emitMetrics": true,
+    "kinesis.endpoint": "https://kinesis.us-west-2.amazonaws.com",
+    "firehose.endpoint": "https://firehose.us-west-2.amazonaws.com",
+    "awsAccessKeyId": "ACCESS_KEY",
+    "awsSecretAccessKey": "SECRET_KEY",  
+    "flows": [
+      {
+        "filePattern": "/tmp/klogs/*",
+        "kinesisStream": "log_stream",
+        "partitionKeyOption": "RANDOM"
+      },
+      {
+        "filePattern": "/tmp/klogs/*",
+        "deliveryStream": "pirate_hose1",
+        "dataProcessingOptions": [
+          {
+            "optionName": "LOGTOJSON",
+            "logFormat": "COMBINEDAPACHELOG"
+          }
+        ]
+      }
+    ]
+  }
